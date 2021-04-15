@@ -77,4 +77,139 @@ print(b)
 
 print(a[5:7])
 
+#딕셔너리 쌍 추가하기
+a={1:'a'}
+a[2]='b'
+print(a)
+
+a['name'] = 'pey'
+print(a)
+
+del a[1]
+print(a)
+
+grade = {'pey':10, 'julliet':99}
+print(grade['pey'])
+
+#Key 리스트 만들기(keys)
+a={'name':'pey','phone':'01101234567','birth':'1118'}
+print(a.keys())
+
+for k in a.keys():
+    print(k)
+
+b = list(a.keys())
+print(b)
+
+c = list(a.values())
+print(c)
+
+d = list(a.items())
+print(d)
+print(d[0])
+
+a.clear()
+print(a)
+
+
+s1 = set([1,2,3])
+print(s1)
+
+s2 = set("Hello")
+print(s2)
+
+s1 = set([1,2,3,3,345,34,5,345,4,7,7,8])
+l1 = list(s1)
+print(l1)
+
+s1 = set([1,2,3,4,5,6])
+s2 = set([4,5,6,7,8,9])
+#교집합
+print(s1&s2)
+#합집합
+print(s1|s2)
+#차집합
+print(s1-s2)
+
+a = True
+b = False
+#자료형을 확인하는 함수 type
+print(type(a))
+
+print(1==1)
+
+if [1]:
+    print("참")
+else:
+    print("거짓")
+
+print(bool('python'))
+print(bool(""))
+
+print(bool(0))
+print(bool(1))
+
+a=[1,2,3]
+b=a
+print(b)
+
+print(a[1])
+print(b[1])
+
+b=a[:]
+a[1]=4
+print(a)
+print(b)
+
+from copy import copy
+b=copy(a)
+
+a[1]=6
+print(a)
+print(b)
+
+a,b=('python','life')
+print(a,b)
+a,b='music','life'
+print(a,b)
+
+a,b=b,a
+print(a,b)
+
+#연습문제 1번
+print("홍길동 씨의 평균 점수 : %d " % ((80+75+55)/3) )
+
+#연습문제 2번
+if(13%2==0):
+    print("짝수입니다")
+else:
+    print("홀수입니다")
+
+#연습문제 3번
+hong = "881120-1068234"
+print("주민등록번호 앞자리는 %s / 뒷자리는 %s" % (hong[0:6],hong[7:]))
+
+#연습문제 4번
+pin = "881120-1068234"
+print(pin[7])
+
+if(pin[7] == "1"):
+    print("남성")
+elif(pin[7] == "2"):
+    print("여성")
+
+#연습문제 5번
+a = "a:b:c:d"
+a = a.replace(":","#")
+print(a)
+
+#연습문제 6번
+a = [1,3,5,4,2]
+a.reverse()
+print(a)
+
+#연습문제 7번
+a = ['Life','is','too','short']
+result = " ".join(a)
+print(result)
 
