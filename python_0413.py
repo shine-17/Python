@@ -214,5 +214,3 @@ result = " ".join(a)
 print(result)
 
 #연습문제 8번
-
-
