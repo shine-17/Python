@@ -342,6 +342,9 @@ a = [1,2,3,4]
 result = [num * 3 for num in a]
 print(result)
 
+#리스트 배포
+#[표현식 for 항목 in 반복가능객체 if 조건문]
+
 #3장
 #연습문제 1번
 a = "Life is too short, you need python"
@@ -369,10 +372,286 @@ print(num)
 
 #연습문제 3번
 #while문을 사용하여 다음과 같이 별(*)을 표시하는 프로그램 작성
+#while문
+i=0
+while i<5:
+    i+=1
+    print("*"*i)
 
-for i in range(1,5):
-    for j in range(1,5):
-        print("*")
+#for문
+for i in range(1,6):
+    for j in range(i):
+        print("*", end='')
+    print('')
 
 
+#연습문제 4번
+for i in range(1,101):
+    print(i, end=" ")
+
+print(" ")
+#연습문제 5번
+A = [70,60,55,75,95,90,80,80,85,100]
+avg=0
+
+for i in A:
+    avg+=i
+    
+print(avg/len(A))
+
+#연습문제 6번
+#리스트 내포
+numbers = [1,2,3,4,5]
+result = [n*2 for n in numbers if n%2==1]
+print(result)
+
+
+
+#함수
+def addition(a,b):
+    return a+b
+
+print(addition(100,200))
+
+def talk():
+    print("Hi")
+
+talk()
+
+#인자가 몇개일지 모를때
+def add_many(*args):
+    result = 0
+    for i in args:
+        result = result + i
+    return result
+
+result = add_many(1,2,3)
+print(result)
+
+result = add_many(1,2,3,4,5,6,7,8,9,10)
+print(result)
+
+#인자가 몇개일지 모를때, 다른 인자도 같이
+def add_mul(choice, *args):
+    if choice == "add":
+        result = 0
+        for i in args:
+            result += i
+    elif choice == "mul":
+        result = 1
+        for i in args:
+            result *= i
+    return result
+
+result = add_mul("add",2,4,6,8,10)
+print(result)
+
+result = add_mul("mul",2,4,6,8,10)
+print(result)
+
+
+#함수의 결괏값은 언제나 하나
+def add_and_mul(a,b):
+    return a+b, a*b
+
+result = add_and_mul(3,4)
+print(result)
+
+def say_myself(name, old, man=True):
+    print("나의 이름은 %s 입니다." % name)
+    print("나이는 %d살입니다." % old)
+    if man:
+        print("남자입니다")
+    else:
+        print("여자입니다")
+
+say_myself("도훈",27,True)
+
+a=1
+def vartest1(a):
+    a+=100
+    return a
+print(vartest1(a))
+
+#global 명령어
+a=1
+def vartest2():
+    global a
+    a=a+1
+
+vartest2()
+print(a)
+
+add = lambda a,b:a+b
+result = add(3,4)
+print(result)
+
+print("life"" is ""too short")
+#콤마는 띄어쓰기
+print("life","is","too short")
+
+for i in range(10):
+    if i==9:
+        print(i)
+        break
+    print(i, end=',')
+    
+f = open("C:\dohun/python.txt", 'w')
+for i in range(1, 11):
+    data = "%d번째 줄입니다.\n" % i
+    f.write(data)
+f.close()
+
+fi = open("C:\dohun/python.txt",'r')
+while True:
+    line = fi.readline()
+    if not line: break
+    print(line)
+fi.close()
+
+
+fil = open("C:\dohun/python.txt",'r')
+lines = fil.readlines()
+for line in lines:
+    print(line)
+fil.close()
+
+file = open("C:\dohun/python.txt",'r')
+data = file.read()
+print(data)
+file.close()
+
+file = open("C:\dohun/python.txt",'a')
+for i in range(11, 20):
+    data = "%d번째 줄입니다.\n" % i
+    file.write(data)
+file.close()
+
+file = open("C:\dohun/python.txt",'r')
+data = file.read()
+print(data)
+
+with open("foo.txt", 'w') as f:
+    f.write("Life is too short, you need python")
+
+#4장
+#연습문제 1번
+def is_odd(n):
+    if(n%2==0):
+        print("짝수입니다")
+    else:
+        print("홀수입니다")
+
+is_odd(11101031243124)
+
+#연습문제 2번
+def all(*args):
+    sum=0
+    for i in args:
+        sum += i
+    avg = sum/len(args)
+    return print(avg)
+
+all(1,1,24,23,2,9)
+
+
+#연습문제 3번
+"""
+input1 = int(input("첫번째 숫자를 입력하세요 : "))
+input2 = int(input("두번째 숫자를 입력하세요 : "))
+
+total = input1 + input2
+print("두 수의 합은 %d 입니다" % total)
+"""
+
+#연습문제 4번
+#출력결과가 다른 것 고르기
+print("you" "need" "python")#1번
+print("you"+"need"+"python")#2번
+print("you","need","python")#3번
+print("".join(["you","need","python"]))#4번
+#3번
+
+#연습문제 5번
+f1 = open("test.txt" ,'w')
+f1.write("Life is too short")
+f1.close()
+f2 = open("test.txt" ,'r')
+print(f2.read())
+
+#연습문제 6번
+"""
+a = input("입력하세요 : ")
+
+file = open("test.txt",'w')
+file.write(a)
+file = open("test.txt",'r')
+print(file.read())
+"""
+
+#연습문제 7번
+b = open("test1.txt",'w')
+b.write("Life is too short\nyou need java")
+
+b = open("test1.txt",'r')
+c = b.read()
+b.close()
+
+c = c.replace("java","python")
+f = open("test1.txt",'w')
+f.write(c)
+
+f = open("test1.txt",'r')
+print(f.read())
+
+
+class Calculator:
+    def __init__(self):
+        self.result = 0
+
+    def add(self, num):
+        self.result += num
+        return self.result
+
+cal1 = Calculator()
+cal2 = Calculator()
+
+print(cal1.add(3))
+print(cal1.add(4))
+print(cal2.add(3))
+print(cal2.add(7))
+
+"""
+[객체와 인스턴스의 차이]
+
+클래스로 만든 객체를 인스턴스라고도 한다.
+그렇다면 객체와 인스턴스의 차이는 무엇일까? 이렇게 생각해 보자.
+a = Cookie() 이렇게 만든 a는 객체이다. 
+그리고 a 객체는 Cookie의 인스턴스이다. 
+즉 인스턴스라는 말은 특정 객체(a)가 어떤 클래스(Cookie)의 객체인지를
+관계 위주로 설명할 때 사용한다.
+"a는 인스턴스"보다는 "a는 객체"라는 표현이 어울리
+"a는 Cookie의 객체"보다는 "a는 Cookie의 인스턴스"라는 표현이 훨씬 잘 어울린다.
+
+객체는 객체 a 그 자체
+인스턴스는 Cookie라는 클래스로 만든 객체
+
+"""
+
+
+
+class FourCal:
+    def setdata(self, first, second):
+        self.first = first
+        self.second = second
+
+
+a=FourCal()
+print(type(a))
+
+a = FourCal()
+print(a.setdata(5,2))
+
+print(a.first)
+print(a.second)
 
