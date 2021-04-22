@@ -495,7 +495,7 @@ for i in range(10):
         print(i)
         break
     print(i, end=',')
-    
+"""
 f = open("C:\dohun/python.txt", 'w')
 for i in range(1, 11):
     data = "%d번째 줄입니다.\n" % i
@@ -533,7 +533,7 @@ print(data)
 
 with open("foo.txt", 'w') as f:
     f.write("Life is too short, you need python")
-
+"""
 #4장
 #연습문제 1번
 def is_odd(n):
@@ -590,6 +590,7 @@ print(file.read())
 """
 
 #연습문제 7번
+"""
 b = open("test1.txt",'w')
 b.write("Life is too short\nyou need java")
 
@@ -603,7 +604,7 @@ f.write(c)
 
 f = open("test1.txt",'r')
 print(f.read())
-
+"""
 
 class Calculator:
     def __init__(self):
@@ -654,4 +655,14 @@ print(a.setdata(5,2))
 
 print(a.first)
 print(a.second)
+
+#구구단만들기
+
+def GuGu(n):
+    for i in range(1,10):
+        print(n," * ",i," = ",n*i)
+
+GuGu(13)
+
+
 
