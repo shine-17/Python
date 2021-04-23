@@ -1,3 +1,3 @@
 # Python
 
-Pythono Study
+Python Study
